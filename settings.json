@@ -1,0 +1,107 @@
+{
+  "security.workspace.trust.enabled": false,
+  "debug.openDebug": "neverOpen",
+
+  "editor.mouseWheelZoom": true,
+  "editor.minimap.enabled": true,
+  "editor.renderControlCharacters": true,
+  "editor.wordWrap": "off",
+  "editor.tabCompletion": "on",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.accessibilitySupport": "auto",
+  "editor.cursorBlinking": "solid",
+  "editor.dragAndDrop": false,
+  "editor.renderWhitespace": "none",
+
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": true,
+  "explorer.incrementalNaming": "smart",
+
+  "files.trimTrailingWhitespace": false,
+  "files.autoSave": "off",
+  "files.defaultLanguage": "powershell",
+  "files.autoGuessEncoding": true,
+
+  "[powershell]": {},
+  "powershell.integratedConsole.showOnStartup": true,
+  "powershell.integratedConsole.focusConsoleOnExecute": false,
+  "powershell.codeFormatting.autoCorrectAliases": true,
+  "powershell.codeFormatting.useCorrectCasing": true,
+  "terminal.integrated.fontFamily": "Consolas",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.rendererType": "auto",
+  "terminal.integrated.scrollback": 1000,
+
+  "window.zoomLevel": 0,
+
+  "workbench.iconTheme": "vscode-icons",
+  // "workbench.colorTheme": "PowerShell ISE",
+  "workbench.activityBar.visible": true,
+  "yaml.schemas": {
+    "file:///toc.schema.json": "/toc\\.yml/i"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "launch": {},
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "git.enableSmartCommit": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "gitlens.defaultDateFormat": null,
+  "git.autofetch": true,
+  "editor.fontLigatures": null,
+  "terminal.integrated.persistentSessionReviveProcess": "never"
+}
