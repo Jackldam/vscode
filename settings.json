@@ -29,9 +29,9 @@
   "powershell.codeFormatting.useCorrectCasing": true,
   "terminal.integrated.fontFamily": "Consolas",
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   "terminal.integrated.rendererType": "auto",
   "terminal.integrated.scrollback": 1000,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
 
   "window.zoomLevel": 0,
 
@@ -49,6 +49,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "better-comments.tags": [
+
+  
     {
       "tag": "!",
       "color": "#FF2D00",
@@ -87,7 +89,7 @@
     },
     {
       "tag": "*",
-      "color": "#98C379",
+      "color": "#ffee00",
       "strikethrough": false,
       "underline": false,
       "backgroundColor": "transparent",
@@ -102,6 +104,16 @@
   "explorer.confirmDragAndDrop": false,
   "gitlens.defaultDateFormat": null,
   "git.autofetch": true,
-  "editor.fontLigatures": null,
-  "terminal.integrated.persistentSessionReviveProcess": "never"
+  "editor.fontLigatures": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "git.confirmSync": false,
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 }
