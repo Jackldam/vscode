@@ -109,6 +109,7 @@ Start-Process @Arguments
 @(
     #"monokai.theme-monokai-pro-vscode",
     "vscode-icons-team.vscode-icons",
+    "Gruntfuggly.todo-tree",
     "kamikillerto.vscode-colorize",
     "eamodio.gitlens",
     "ecmel.vscode-html-css",
@@ -125,7 +126,6 @@ Start-Process @Arguments
     "mhutchie.git-graph",
     "docsmsft.docs-yaml",
     "formulahendry.code-runner",
-    "coenraads.bracket-pair-colorizer-2",
     "aaron-bond.better-comments"
 ) | ForEach-Object $_ {
     $Arguments = @{
