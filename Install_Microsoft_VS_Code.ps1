@@ -155,9 +155,3 @@ if (-not ($KeepSetupFile)) {
     #Remove Setup File.
     Remove-Item -Path:$SetupFile -Force
 }
-
-Write-Verbose "Installing GIT"
-. ".\Install_GIT.ps1"
-
-Write-Verbose "Installing GIT"
-. ".\Install_Powershell_LatestVersion.ps1"
