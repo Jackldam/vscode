@@ -16,91 +16,41 @@
 [CmdletBinding()]
 param (
     # Parameter help description
-    [Parameter(Position = 0, ParameterSetName = "SetupFile")]
-    [switch][bool]
-    $KeepSetupFile,
-    # Parameter help description
-    [Parameter(Position = 1, ParameterSetName = "SetupFile")]
+    [Parameter(Mandatory)]
     [string]
-    $FilePath = ".\VSCodeUserSetup-x64-Latest.exe"
+    $FilePath
 )
 
-#Region Start Variables
-
-#No visual output download bar.
-$ProgressPreference = 'SilentlyContinue'
-$SetupFile = $FilePath
-
-#EndRegion
-
 #Region prerequisites
-try {
-    Write-Host "Install PackageProvider Nuget"
-    #Install latest version of PackageProvider
-    Install-PackageProvider -Name "NuGet" `
-        -MinimumVersion 2.8.5.201 `
-        -Force `
-        -ErrorAction Stop | Out-Null
-}
-catch {
-    $_
-    exit
-}
+Write-Host "Install PackageProvider Nuget"
+#Install latest version of PackageProvider
+Install-PackageProvider -Name "NuGet" `
+    -MinimumVersion 2.8.5.201 `
+    -Scope CurrentUser `
+    -ErrorAction Stop `
+    -Force | Out-Null
 
-try {
-    Write-Host "Install module PackageManagement"
-    #Install latest version of PackageManagement
-    Install-Module -Name "PackageManagement" `
-        -MinimumVersion 1.4.6 `
-        -Scope CurrentUser `
-        -AllowClobber `
-        -Repository "PSGallery" `
-        -Force `
-        -ErrorAction Stop
-}
-catch {
-    $_
-    exit
-}
 
-#EndRegion
-
-#Region download latest version of Visual Code
-
-try {
-    if (Test-Path -Path $SetupFile) {
-        if ($Latest) {
-            Write-Host "Downloading latest version VSCode"
-
-            Invoke-WebRequest -Uri "https://aka.ms/win32-x64-user-stable" `
-                -OutFile:$SetupFile `
-                -ErrorAction Stop
-        }
-    }
-    else {
-        Write-Host "Downloading latest version VSCode"
-
-        Invoke-WebRequest -Uri "https://aka.ms/win32-x64-user-stable" `
-            -OutFile:$SetupFile `
-            -ErrorAction Stop
-    }
-}
-catch {
-    $_
-    exit
-}
-
-#EndRegion
+Write-Host "Install module PackageManagement"
+#Install latest version of PackageManagement
+Install-Module -Name "PackageManagement" `
+    -MinimumVersion 1.4.6 `
+    -Scope CurrentUser `
+    -AllowClobber `
+    -Repository "PSGallery" `
+    -ErrorAction Stop `
+    -Force
+#endregion
 
 #Region setup Visual Code with downloaded file.
 $Arguments = @{
-    FilePath     = $SetupFile
+    FilePath     = $FilePath
     ArgumentList = "/VERYSILENT /NORESTART /MERGETASKS=addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath,!runcode"
     Wait         = $true
     WindowStyle  = "Hidden"
 }
 
-Write-Verbose "Installing $SetupFile"
+Write-Verbose "Installing $FilePath"
 Start-Process @Arguments
 
 #EndRegion
@@ -149,9 +99,3 @@ $Arguments = @{
 Copy-Item @Arguments
 
 #EndRegion
-
-#delete setupfile [Optional]
-if (-not ($KeepSetupFile)) {
-    #Remove Setup File.
-    Remove-Item -Path:$SetupFile -Force
-}
