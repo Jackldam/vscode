@@ -84,7 +84,7 @@ Start-Process @Arguments
         Wait         = $true
     }
     Write-Verbose "Installing $_"
-    Start-Process @Arguments
+    Start-Process @Arguments -WindowStyle Hidden
 }
 
 #EndRegion
