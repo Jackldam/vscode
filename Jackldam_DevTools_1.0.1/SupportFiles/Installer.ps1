@@ -41,6 +41,22 @@ Execute-MSI @Params
 
 #endregion
 
+#* Install Bicep
+Show-InstallationProgress -StatusMessage "Installing Bicep"
+#region
+
+$Params = @{
+    UserName   = "$($LoggedOnUserSessions.NTAccount)"
+    Path       = "powershell.exe"
+    Parameters = "-ExecutionPolicy Bypass -WindowStyle Hidden -file $AppTempFolder\InstallBicep.ps1 -FilePath `"$AppTempFolder\VSCodeUserSetup-x64.exe`""
+    RunLevel   = "LeastPrivilege"
+    Wait       = $true
+}
+
+Execute-ProcessAsUser @Params
+
+#endregion
+
 #* Install VSCode
 Show-InstallationProgress -StatusMessage "Installing VSCode"
 #region

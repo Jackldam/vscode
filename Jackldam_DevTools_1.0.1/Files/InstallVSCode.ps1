@@ -57,26 +57,27 @@ Start-Process @Arguments
 
 #Region install Visual Code extensions
 @(
-    #"monokai.theme-monokai-pro-vscode",
-    "vscode-icons-team.vscode-icons",
-    "Gruntfuggly.todo-tree",
-    "kamikillerto.vscode-colorize",
-    "eamodio.gitlens",
-    "ecmel.vscode-html-css",
-    "abusaidm.html-snippets",
-    "ms-vscode.azurecli",
-    "ms-vscode.powershell",
-    "oderwat.indent-rainbow",
-    "msazurermtools.azurerm-vscode-tools",
-    "dotjoshjohnson.xml",
-    "foxundermoon.shell-format",
-    "esbenp.prettier-vscode",
-    "pkief.material-icon-theme",
-    "donjayamanne.githistory",
-    "mhutchie.git-graph",
-    "docsmsft.docs-yaml",
-    "formulahendry.code-runner",
-    "aaron-bond.better-comments"
+    #,"monokai.theme-monokai-pro-vscode"
+    , "ms-azuretools.vscode-bicep"
+    , "vscode-icons-team.vscode-icons"
+    , "Gruntfuggly.todo-tree"
+    , "kamikillerto.vscode-colorize"
+    , "eamodio.gitlens"
+    , "ecmel.vscode-html-css"
+    , "abusaidm.html-snippets"
+    , "ms-vscode.azurecli"
+    , "ms-vscode.powershell"
+    , "oderwat.indent-rainbow"
+    , "msazurermtools.azurerm-vscode-tools"
+    , "dotjoshjohnson.xml"
+    , "foxundermoon.shell-format"
+    , "esbenp.prettier-vscode"
+    , "pkief.material-icon-theme"
+    , "donjayamanne.githistory"
+    , "mhutchie.git-graph"
+    , "docsmsft.docs-yaml"
+    , "formulahendry.code-runner"
+    , "aaron-bond.better-comments"
 ) | ForEach-Object $_ {
     $Arguments = @{
         FilePath     = "C:\Users\$env:USERNAME\AppData\Local\Programs\Microsoft VS Code\bin\code"

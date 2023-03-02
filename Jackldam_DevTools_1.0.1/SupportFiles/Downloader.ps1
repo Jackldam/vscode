@@ -14,6 +14,8 @@
 [CmdletBinding()]
 param ()
 
+$ProgressPreference = "SilentlyContinue"
+
 #*Download Git
 Show-InstallationProgress -StatusMessage "Downloading Git"
 #region
